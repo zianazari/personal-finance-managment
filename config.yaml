@@ -1,0 +1,13 @@
+server:
+  port: 443
+  host: "localhost"
+  logs: "/var/log/expence_management/logs.log"
+  tls-cert-path: "certs/cert.pem"
+  tls-key-path: "certs/key.pem"
+
+database:
+  user: "postgres"
+  password: "postgres"
+  name: "postgres"
+  port: 5432
+  sslmode: "disable"
