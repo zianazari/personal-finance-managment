@@ -8,13 +8,14 @@ import (
 	"flag"
 	"fmt"
 	"log"
+	"os"
 	"strconv"
 
 	"github.com/joho/godotenv"
 )
 
 const (
-	EnvFilePath = "infra/.env"
+	EnvFilePath = ".env"
 	DefaultDB   = "postgres"
 )
 
@@ -51,9 +52,9 @@ func main() {
 		dsn := fmt.Sprintf(
 			"host=%s user=%s password=%s dbname=%s port=%d sslmode=%s TimeZone=Europe/Helsinki",
 			options.Server.Host,
-			options.Database.User,
-			options.Database.Password,
-			options.Database.Name,
+			os.Getenv("POSTGRES_USER"),
+			os.Getenv("POSTGRES_PASSWORD"),
+			os.Getenv("POSTGRES_DB"),
 			options.Database.Port,
 			options.Database.SSLMode,
 		)

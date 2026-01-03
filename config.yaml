@@ -6,8 +6,5 @@ server:
   tls-key-path: "certs/key.pem"
 
 database:
-  user: "postgres"
-  password: "postgres"
-  name: "postgres"
   port: 5432
   sslmode: "disable"
