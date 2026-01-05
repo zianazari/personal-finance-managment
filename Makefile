@@ -1,9 +1,12 @@
 # Variables
-APP_NAME=backend
+APP_NAME=personal_finance_management
 
 # Build the app
-build:
+mac:
 	go build -o $(APP_NAME) .
+
+windows:
+	GOOS=windows GOARCH=amd64 go build -o $(APP_NAME).exe .
 
 # Run the app
 run:
@@ -23,4 +26,3 @@ cleandb:
 initdb:
 	docker compose up -d
 
-	
