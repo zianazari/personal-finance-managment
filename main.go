@@ -71,7 +71,7 @@ func main() {
 
 	initDB(h)
 
-	router := makeRouts(h)
+	router := makeRouts(h, options.AllowedOrigins)
 
 	// Start server
 	strport := strconv.Itoa(options.Server.Port)

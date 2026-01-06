@@ -20,6 +20,8 @@ type Config struct {
 		Port     int    `yaml:"port"`
 		SSLMode  string `yaml:"sslmode"`
 	} `yaml:"database"`
+
+	AllowedOrigins []string `yaml:"allowed_origins"`
 }
 
 func GetOptions() *Config {

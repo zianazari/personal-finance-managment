@@ -6,9 +6,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func makeRouts(h *api.Handler) *gin.Engine {
+func makeRouts(h *api.Handler, allowedOrigins []string) *gin.Engine {
 	router := gin.Default()
-	router.Use(corsMiddleware())
+	router.Use(corsMiddleware(allowedOrigins))
 
 	router.Static("/assets", "./dist/assets")
 	router.StaticFile("/", "./dist/index.html")
